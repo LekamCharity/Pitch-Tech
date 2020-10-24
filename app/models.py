@@ -1,4 +1,4 @@
-from . import db
+from . import db,login_manager
 
 class User(UserMixin,db.model):
     __tablename__ = 'users'
