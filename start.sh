@@ -1,1 +1,1 @@
-SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://lekam:kulangombe@localhost/watchlist'
+SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Access@localhost/Pitch-tech'
