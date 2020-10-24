@@ -1,10 +1,11 @@
 from app import create_app,db
-from app.models import User
+from app.models import User, Pitch ,Comment
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager, Server
 
 app = create_app('production')
 
+db = SQLAlchemy(app)
 manager = Manager(app)
 migrate = Migrate(app,db)
 manager.add_command('db',MigrateCommand)
