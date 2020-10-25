@@ -2,7 +2,7 @@ from flask import render_template,redirect,url_for,abort,request
 from . import main
 from flask_login import login_required,current_user
 from ..models import User,Pitch,Comment,Upvote,Downvote
-from .. import db,photos
+from .. import db
 from .form import IdeaForm,CommentForm,UpdateProf
 
 @main.route('/')
