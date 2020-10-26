@@ -6,6 +6,7 @@ from ..models import User
 from flask_login import login_user
 from ..email import mail_message
 from .. import db
+from flask import flash
 
 
 @auth.route('/login',methods=['GET','POST'])

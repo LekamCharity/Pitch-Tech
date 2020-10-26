@@ -5,6 +5,7 @@ from ..models import User,Pitch,Comment,Upvote,Downvote
 from .. import db
 from .form import IdeaForm,CommentForm,UpdateProf
 
+
 @main.route('/')
 def index():
     pitches = Pitch.query.all()

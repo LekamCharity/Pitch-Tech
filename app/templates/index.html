@@ -2,36 +2,63 @@
 {% import 'macro.html' as macro %}
 
 {% block content%}
+<style>
+  img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+
+  min-height: 100%;
+  min-width: 1024px;
+	
+  width: 100%;
+  height: auto;
+	
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+</style>
+<img src="https://i.imgur.com/yxtYQNP.jpg" alt="Pitch">
 <div class="container">
-    <h2></h2>
-    <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active"  id="homCards" data-toggle="tab" href="#all"><strong>All Pitches</strong></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"  id="homCards" data-toggle="tab" href="#event">Event Pitches</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="homCards"  data-toggle="tab" href="#job">Job Pitches</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="homCards"  data-toggle="tab" href="#interview">Interview Pitches</a>
-        </li>
-      </ul>
-      <div class="tab-content">
-        <div class="container tap-pan active" id="all">
-          {{ macro.displayContent(pitches) }}
-        </div>
-        <div class="container tap-pan fade" id="job">
-            {{ macro.displayContent(job) }}
-        </div>
-        <div class="container tap-pan fade" id="interview">
-            {{ macro.displayContent(interview) }}
-        </div>
-        <div class="container tap-pan fade" id="event">
-            {{macro.displayContent(event)}}
-        </div>
+  <h2></h2>
+  <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active"  id="homCards" data-toggle="tab" href="#all"><strong>All Pitches</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  id="homCards" data-toggle="tab" href="#event">Event Pitches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="homCards"  data-toggle="tab" href="#job">Job Pitches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="homCards"  data-toggle="tab" href="#interview">Interview Pitches</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="container tap-pan active" id="all">
+        {{ macro.displayPitchList(pitches) }}
       </div>
+      <div class="container tap-pan fade" id="job">
+          {{ macro.displayPitchList(job) }}
+      </div>
+      <div class="container tap-pan fade" id="interview">
+          {{ macro.displayPitchList(interview) }}
+      </div>
+      <div class="container tap-pan fade" id="event">
+          {{macro.displayPitchList(event)}}
+      </div>
+    </div>
 </div>
+
 {% endblock %}
 
