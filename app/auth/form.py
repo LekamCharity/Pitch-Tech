@@ -6,7 +6,7 @@ from ..models import User
 class LoginForm(FlaskForm):
     username = StringField('Username',validators=[Required()])
     password  = PasswordField('Password',validators=[Required()])
-    remember = BooleanField('Remember This')
+    remember = BooleanField('Remember me')
     submit = SubmitField('Login')
 
 class RegisterForm(FlaskForm):
@@ -18,7 +18,7 @@ class RegisterForm(FlaskForm):
 
     def validate_email(self,data_field):
         if User.query.filter_by(email = data_field.data).first():
-            raise ValidationError("Email already exists")
+            raise ValidationError("Email exists")
 
     def validate_username(self,data_field):
         if User.query.filter_by(username= data_field.data).first():
