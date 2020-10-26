@@ -8,7 +8,6 @@ class User(UserMixin,db.Model):
     username = db.Column(db.String(255),unique = True,nullable = False)
     email  = db.Column(db.String(255),unique = True,nullable = False)
     bio = db.Column(db.String(255))
-    profile_pic_path = db.Column(db.String())
     pitches = db.relationship('Pitch',backref='user',lazy='dynamic')
     comment = db.relationship('Comment',backref='user',lazy='dynamic')
     upvote = db.relationship('Upvote',backref='user',lazy='dynamic')
@@ -77,7 +76,7 @@ class Comment(db.Model):
 
 class Upvote(db.Model):
     __tablename__ = 'upvotes'
-
+ 
     id = db.Column(db.Integer,primary_key=True)
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
     pitch_id = db.Column(db.Integer,db.ForeignKey('pitches.id'))
