@@ -61,7 +61,7 @@ class Comment(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     comment = db.Column(db.Text(),nullable = False)
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
-    pitch_id = db.Column(db.Integer,db.ForeignKey('pitches.id'))
+    pitch_id = db.Column(db.Integer,db.ForeignKey('pitchtech.id'))
 
     def save_comments(self):
         db.session.add(self)
@@ -79,7 +79,7 @@ class Upvote(db.Model):
  
     id = db.Column(db.Integer,primary_key=True)
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
-    pitch_id = db.Column(db.Integer,db.ForeignKey('pitches.id'))
+    pitch_id = db.Column(db.Integer,db.ForeignKey('pitchtech.id'))
 
 
     def save(self):
@@ -99,7 +99,7 @@ class Downvote(db.Model):
 
     id =  db.Column(db.Integer,primary_key=True)
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
-    pitch_id = db.Column(db.Integer,db.ForeignKey('pitches.id'))
+    pitch_id = db.Column(db.Integer,db.ForeignKey('pitchtech.id'))
     
 
     def save(self):
