@@ -33,9 +33,9 @@ Install [Python](https://www.python.org/downloads/)
 
 ### Create a Virtual Environment
 Run the following commands in the same terminal:
-```python3.8 -m venv --without-pip virtual```
-```curl https://bootstrap.pypa.io/get-pip.py | python```
-```source virtual/bin/activate```
+* ```python3.8 -m venv --without-pip virtual```
+* ```curl https://bootstrap.pypa.io/get-pip.py | python```
+* ```source virtual/bin/activate```
 
 ### Database
 Quickly create a database where your data is going to be persistent .
