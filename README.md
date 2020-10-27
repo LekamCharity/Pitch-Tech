@@ -12,10 +12,10 @@ A Pitch-Tech is an application where users can vote on them, leave comments, and
 ## Description & User Specifications
 The Pitch-Tech is web application  that enable users to:
 
-    1. Post pitches
-    2. Downvote a pitch
-    3. Upvote a pitch
-    4. Comment on  pitches posted by othe users
+* Post pitches
+* Downvote a pitch
+* Upvote a pitch
+* Comment on  pitches posted by othe users
 
 
 ## Set-up and Installation
