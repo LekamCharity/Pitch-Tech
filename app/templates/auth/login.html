@@ -73,8 +73,9 @@
   <div class="container-fluid">
     <div class="container">
       {{wtf.quick_form(loginform)}}
+      <a href="{{url_for('auth.login')}}"></a>
       <p style="margin-top: 3%;">Don't have an account?
-        <a href="{{url_for('auth.login')}}">Sign up</a>
+        <a href="{{url_for('auth.signup')}}">Sign up</a>
       </p>
     </div>
   </div>
