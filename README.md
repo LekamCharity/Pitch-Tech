@@ -77,5 +77,5 @@ In the same terminal type:
 If you have any question or contributions, please email me at [lekamcharity@gmail.com]
 
 ### License
-  [MIT](https://github.com/LekamCharity/Natalie-news/blob/master/License) Copyright (c) 2020 Lekam Charity
+  [MIT](https://github.com/LekamCharity/Pitch-tech/blob/master/License) Copyright (c) 2020 Lekam Charity
 
