@@ -32,30 +32,36 @@
 </style>
 <br>
 <img src="https://i.imgur.com/yxtYQNPb.jpg" alt="Pitch">
-<div class="container" style= "font-family: 'Cormorant Upright', serif;">
-  <div class="row">
-      <div class="col-md-4">
-          <div class="well well-lg">
-              <h3>Interview Pitches</h3>
-              <p>Having an outline pitch ready is a great confidence-booster for graduate interviews</p>
-              <a href="{{url_for('main.new_pitch')}}" class="btn btn-primary -center">View</a>
-          </div>
+<div class="container">
+  <h2></h2>
+  <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active"  id="homCards" data-toggle="tab" href="#all"><strong>All Pitches</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  id="homCards" data-toggle="tab" href="#event">Event Pitches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="homCards"  data-toggle="tab" href="#job">Job Pitches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="homCards"  data-toggle="tab" href="#interview">Interview Pitches</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="container tap-pan active" id="all">
+        {{ macro.displayContent(pitches) }}
       </div>
-      <div class="col-md-4">
-          <div class="well well-lg">
-              <h3>Product Pitches</h3>
-              <p>Talk about your products in a courageous way go no further.</p>
-              <a href="{{url_for('main.new_pitch')}}" class="btn btn-primary -center">View</a>
-          </div>
+      <div class="container tap-pan fade" id="job">
+          {{ macro.displayContent(job) }}
       </div>
-      <div class="col-md-4">
-          <div class="well well-lg">
-              <h3>Promotion Pitches</h3>
-              <p>To Promote a pitch welcome right here to get more knolwedge about this.</p>
-              <a href="{{url_for('main.new_pitch')}}" class="btn btn-primary -center">View</a>
-          </div>
+      <div class="container tap-pan fade" id="interview">
+          {{ macro.displayContent(interview) }}
       </div>
-  </div>
+      <div class="container tap-pan fade" id="event">
+          {{macro.displayContent(event)}}
+      </div>
+    </div>
 </div>
 {% endblock %}
 

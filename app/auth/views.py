@@ -13,7 +13,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit:
         user = User.query.filter_by(username =form.username.data).first()
-        if user != None and user.verify_password(form.password.data):
+        if user is not None and user.verify_password(form.password.data):
             login_user(user,form.remember.data)
             return redirect(request.args.get('next') or url_for('main.index'))
         flash('Invalid username and password')
@@ -24,8 +24,10 @@ def signup():
     form = RegisterForm()
     if form.validate_on_submit():
         user = User(email=form.email.data,username = form.username.data,password=form.password.data)
-        user.save_user()
-        mail_message("Welcome to Pitch-tech","email/welcome_user.html", user.email,user=user)
+        # user.save_user()
+        db.session.add(user)
+        db.session.commit()
+        # mail_message("Welcome to Pitch-tech","email/welcome_user.html", user.email,user=user)
         return redirect(url_for('auth.login'))
     return render_template('auth/signup.html',reg_form=form)
 

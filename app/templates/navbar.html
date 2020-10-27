@@ -19,29 +19,8 @@
   </button>
   <a class="btn btn-success" href="/">Pitches</a>
   <a href="{{url_for('main.new_pitch')}}" class="btn btn-success">Create pitch</a>
-  <ul class="nav navbar-nav navbar-right">
-      {% if current_user.is_authenticated and current_user.profile_pic_path is none %}
-      <span class="nav-item" style="height: 42.97px; width: 50.97px;"><a href="{{url_for('main.profile',uname=current_user.username)}}"><img src="{{url_for('static', filename = 'imgs/avatar.png')}}" alt="" style="height: 42.97px; width: 42.97px; border-radius: 50%; border-right: 2.5px solid white; border-bottom: 2.5px solid white"></a></span> 
-      <li class="nav-item">
-              <a class="nav-link" href="{{url_for('main.profile',uname=current_user.username)}}">{{current_user.username}}</a>
-          </li>        
-          <li class="nav-item">
-              <a class="nav-link" href="{{url_for('auth.logout')}}">Signout</a>
-          </li>  
-
-      {% elif current_user.is_authenticated and current_user.profile_pic_path %}
-      <span class="nav-item" style="height: 42.97px; width: 50.97px;"><a href="{{url_for('main.profile',uname=current_user.username)}}"><img src="{{url_for('static', filename = current_user.profile_pic_path)}}" alt="" style="height: 42.97px; width: 42.97px; border-radius: 50%; border-right: 2.5px solid white; border-bottom: 2.5px solid white"></a></span>
-      <li class="nav-item">
-          <a class="nav-link" href="{{url_for('main.profile',uname=current_user.username)}}">{{current_user.username}}</a>
-      </li>        
-      <li class="nav-item">
-          <a class="nav-link" href="{{url_for('auth.logout')}}">Signout</a>
-      </li>      
-
-      {% else %}
-      <li class="nav-item">
-          <a class="nav-link" href="{{url_for('auth.login')}}">Signin</a>
-      </li>
-      {% endif %}
-  </ul>
+  <ul class="navbar-nav my-2 my-lg-0">
+        <a class="nav-link login-text text-white" href="/login">Login</a>
+        <a class="nav-link login-text text-white" href="/logout">Logout</a>
+</ul>
 </nav>
