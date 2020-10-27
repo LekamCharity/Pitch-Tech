@@ -69,6 +69,9 @@ In the same terminal type:
     - Heroku
     - Postgresql
 
+## Known bugs
+ * profile doesn't work properly.
+
 ## Contact Information 
 
 If you have any question or contributions, please email me at [lekamcharity@gmail.com]
