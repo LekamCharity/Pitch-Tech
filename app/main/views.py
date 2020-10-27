@@ -5,7 +5,6 @@ from ..models import User,Pitch,Comment,Upvote,Downvote
 from .. import db
 from .form import IdeaForm,CommentForm,UpdateProf
 
-
 @main.route('/')
 def index():
     pitches = Pitch.query.all()
@@ -107,6 +106,4 @@ def dislike(id):
     new_downvote = Downvote(user=current_user,pitch_id=id)
     new_downvote.save()
     return redirect(url_for('main.index',id=id))
-
-
 
