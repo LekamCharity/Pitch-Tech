@@ -2,36 +2,60 @@
 {% import 'macro.html' as macro %}
 
 {% block content%}
-<div class="container">
-    <h2></h2>
-    <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active"  id="homCards" data-toggle="tab" href="#all"><strong>All Pitches</strong></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"  id="homCards" data-toggle="tab" href="#event">Event Pitches</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="homCards"  data-toggle="tab" href="#job">Job Pitches</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="homCards"  data-toggle="tab" href="#interview">Interview Pitches</a>
-        </li>
-      </ul>
-      <div class="tab-content">
-        <div class="container tap-pan active" id="all">
-          {{ macro.displayContent(pitches) }}
-        </div>
-        <div class="container tap-pan fade" id="job">
-            {{ macro.displayContent(job) }}
-        </div>
-        <div class="container tap-pan fade" id="interview">
-            {{ macro.displayContent(interview) }}
-        </div>
-        <div class="container tap-pan fade" id="event">
-            {{macro.displayContent(event)}}
-        </div>
+<style>
+  img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+</style>
+<br>
+<img src="https://i.imgur.com/yxtYQNPb.jpg" alt="Pitch">
+<div class="container" style= "font-family: 'Cormorant Upright', serif;">
+  <div class="row">
+      <div class="col-md-4">
+          <div class="well well-lg">
+              <h3>Interview Pitches</h3>
+              <p>Want to ace an interview in just a few words, welcome.</p>
+              <a href="{{url_for('main.new_pitch')}}" class="btn btn-primary -center">View</a>
+          </div>
       </div>
+      <div class="col-md-4">
+          <div class="well well-lg">
+              <h3>Product Pitches</h3>
+              <p>Want to talk about your products, you're in the right place.</p>
+              <a href="{{url_for('main.new_pitch')}}" class="btn btn-primary -center">View</a>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="well well-lg">
+              <h3>Promotion Pitches</h3>
+              <p>Want to promote anything, step right up and begin.</p>
+              <a href="{{url_for('main.new_pitch')}}" class="btn btn-primary -center">View</a>
+          </div>
+      </div>
+  </div>
 </div>
 {% endblock %}
 

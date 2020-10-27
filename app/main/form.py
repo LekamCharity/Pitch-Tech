@@ -3,8 +3,8 @@ from wtforms import StringField,SelectField,TextAreaField,SubmitField
 from wtforms.validators import Required
 
 class UpdateProf(FlaskForm):
-    bio = TextAreaField('Type something about yourself',validators=[Required()])
-    submit = SubmitField('Update')
+    bio = TextAreaField('Type us about you.',validators=[Required()])
+    submit = SubmitField('Submit')
 
 class IdeaForm(FlaskForm):
     title = StringField('Title',validators=[Required()])
