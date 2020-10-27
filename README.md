@@ -17,6 +17,8 @@ The Pitch-Tech is web application  that enable users to:
 * Upvote a pitch
 * Comment on  pitches posted by othe users
 
+## Live link to the website 
+  ``` https://pitchtech.herokuapp.com/```
 
 ## Set-up and Installation
 
