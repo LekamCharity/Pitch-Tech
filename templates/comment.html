@@ -1,23 +1,8 @@
 {% extends 'base.html'%}
 {% import 'bootstrap/wtf.html' as wtf %}
-{% import 'macro.html' as macro%}
+
 
 {% block content %}
-<style>
-    .container-fluid {
-        margin-top: 5%;
-    }
-    #column_two {
-        margin-left: 10%;
-    }
-    .btn {
-        background-color: white;
-        border: 1px solid rgb(200, 213, 226);
-        color: dodgerblue;
-        margin: 4% 0%;
-    }
-</style>
-
 <div class="container">
     <div class="row">
         {% if all_comments %}
