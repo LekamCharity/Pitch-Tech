@@ -3,7 +3,7 @@ from wtforms import StringField,SelectField,TextAreaField,SubmitField
 from wtforms.validators import Required
 
 class UpdateProf(FlaskForm):
-    bio = TextAreaField('Type us about you.',validators=[Required()])
+    bio = TextAreaField('Tell us about you.',validators=[Required()])
     submit = SubmitField('Submit')
 
 class IdeaForm(FlaskForm):
